@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ToDoList from "./screen/ToDoList";
+import React, { useState } from "react";
+import Card from "./components/Card";
 
 function App() {
+  const [tasksList, setTasksList] = useState([
+    {
+      id: 0,
+      title: "task 1",
+      description: "teste",
+      section: 0,
+      idSection: 0,
+    },
+  ]);
+  const sections = ["To do", "Doing", "Done"];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ToDoList
+        sections={sections}
+        tasksList={tasksList}
+        setTasksList={setTasksList}
+      />
+
+      {tasksList.map((value) => (
+        <Card
+          key={"cl" + value.id}
+          title={value.title}
+          description={value.description}
+          id={value.id}
+          section={sections[value.idSection]}
+        />
+      ))}
     </div>
   );
 }

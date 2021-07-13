@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 5px;
+  border: 1px solid #cecece;
+}
+
+.containerDragAndDrop {
+  height: 300px;
+  border: 1px solid #cecece;
+}

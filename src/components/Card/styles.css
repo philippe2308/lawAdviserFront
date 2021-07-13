@@ -1,0 +1,7 @@
+.cardTask {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 5px;
+  background: #ccc;
+}
